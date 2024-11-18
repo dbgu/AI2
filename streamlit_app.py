@@ -58,7 +58,7 @@ if uploaded_file is not None:
      elif prediction == labels[2]:
          st.write("짬뽕은 맵지만 엄청엄청엄청엄청준식!!")
 
-    for label, prob in zip(labels, probs):
+     for label, prob in zip(labels, probs):
         # HTML 및 CSS로 확률을 시각화
         st.markdown(f"""
             <div style="background-color: #f0f0f0; border-radius: 5px; padding: 5px; margin: 5px 0;">
