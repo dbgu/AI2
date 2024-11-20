@@ -1,4 +1,4 @@
-#이전 수업 시간에 만들었던 이미지 분류 pkl 파일을 바탕으로 한 이미지 분류 모델을 Streamlit에 올리는 예제 코드
+#나의 Pkl파일을 올려서 나만의 모델 확인하기
 #파일 이름 streamlit_app.py
 
 import streamlit as st
@@ -6,7 +6,7 @@ from fastai.vision.all import *
 from PIL import Image
 import gdown
 
-# Google Drive 파일 IDa
+# Google Drive 파일 ID (여기에 나의 pkl 파일의 id 집어넣어야 동작함!!!!!!!!!!!!!)
 file_id = '1NN1Ujql7Vtsdl720fsuintYC2a06WguG'
 
 # Google Drive에서 파일 다운로드 함수
@@ -51,14 +51,14 @@ if uploaded_file is not None:
     # 클래스별 확률을 HTML과 CSS로 시각화
     st.markdown("<h3>클래스별 확률:</h3>", unsafe_allow_html=True)
 
-    if prediction == labels[0]:
-          st.write("중냉 몰라")
-    elif prediction == labels[1]:
-          st.write("짜장면은 짜장면")
-    elif prediction == labels[2]:
-          st.write("짬뽕은 맵지만 엄청엄청엄청엄청준식!!")
+     if prediction == labels[0]:
+         st.write("중냉 꿋굿")
+     elif prediction == labels[1]:
+         st.write("짜장면은 굿")
+     elif prediction == labels[2]:
+         st.write("짬뽕은 맵지만 맛있어!!")
 
-     for label, prob in zip(labels, probs):
+    for label, prob in zip(labels, probs):
         # HTML 및 CSS로 확률을 시각화
         st.markdown(f"""
             <div style="background-color: #f0f0f0; border-radius: 5px; padding: 5px; margin: 5px 0;">
